@@ -66,3 +66,21 @@ function reset(){
     center()
     unzoom()
 }
+
+//change scheme to display
+
+const schemeSelection = document.getElementById('schemeSelection')
+
+//get id of schemeSet 
+let params = new URLSearchParams(window.location.search)
+let id = params.get('id')
+
+//func to change displayed scheme 
+function changeScheme(schemeID){
+    actionLayer.style.backgroundImage = `url('../schemes/${id}/${schemeID}.png')`
+    reset()
+}
+
+for (i of schemeSets[id].schemeNumbers){
+    schemeSelection.innerHTML += `<button onclick="changeScheme(${i})">floor ${i}</button><br>`
+}

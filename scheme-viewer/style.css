@@ -25,3 +25,12 @@
     background-position: left 0px top 0px;
     background-repeat: no-repeat;
 }
+.schemeSelection{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 20vw;
+    height: 50vh;
+    background-color: green;
+    z-index: 3;
+}
