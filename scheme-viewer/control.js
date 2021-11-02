@@ -75,6 +75,9 @@ const schemeSelection = document.getElementById('schemeSelection')
 let params = new URLSearchParams(window.location.search)
 let id = params.get('id')
 
+//change scheme initially
+actionLayer.style.backgroundImage = `url('../schemes/${id}/1.png')`
+
 //func to change displayed scheme 
 function changeScheme(schemeID){
     actionLayer.style.backgroundImage = `url('../schemes/${id}/${schemeID}.png')`
@@ -83,4 +86,13 @@ function changeScheme(schemeID){
 
 for (i of schemeSets[id].schemeNumbers){
     schemeSelection.innerHTML += `<button onclick="changeScheme(${i})">floor ${i}</button><br>`
+}
+
+//show legend
+const legend = document.getElementById('legend')
+
+for (el of schemeSets[id].legendElements){
+    legend.innerHTML += `<image class="legendIcon" src="../schemes/elements/${el}.png"></image>`
+    legend.innerHTML += `- ${legendDescription.get(el)}`
+    legend.innerHTML += '<br>'
 }

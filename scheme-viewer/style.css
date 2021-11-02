@@ -20,7 +20,6 @@
     height: 100vh;
     width: 80vw;
     background-color: brown;
-    background-image: url('../schemes/0/1.png');
     background-size: 80vw;
     background-position: left 0px top 0px;
     background-repeat: no-repeat;
@@ -33,4 +32,16 @@
     height: 50vh;
     background-color: green;
     z-index: 3;
+}
+.legend{
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    background-color:peru;
+    width: 20vw;
+    height: auto;
+}
+.legendIcon{
+    width: 25px;
+    margin: 5px;
 }

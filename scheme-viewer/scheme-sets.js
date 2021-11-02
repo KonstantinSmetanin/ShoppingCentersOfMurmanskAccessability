@@ -7,7 +7,7 @@
 const schemeSets = [
     {
         schemeNumbers: [1,2],
-        legendElements: ['elevator', 'escalator']
+        legendElements: ['elevator', 'escalator', 'oneway', 'twoway']
     },
     {
         schemeNumbers: [],
@@ -15,6 +15,6 @@ const schemeSets = [
     },
     {
         schemeNumbers: [1,2,3,4],
-        legendElements: ['elevator', 'escalator']
+        legendElements: ['elevator', 'escalator', 'oneway', 'twoway']
     }
 ]
