@@ -9,6 +9,7 @@ function callFlyToWithId(id){
 function updateResult(query){
     let resultList = document.getElementById('searchResults')
     resultList.innerHTML =  ''
+    let btn, frm
 
     if(query !== ''){
         markerDict.map( (el) => {
@@ -21,12 +22,15 @@ function updateResult(query){
                     :false
                 )
             ){
-                resultList.innerHTML +=    `<form>
-                                                <button type="button" class="searchResult" onclick="callFlyToWithId(${el.properties.id})">
-                                                    ${el.properties.title}<br>
-                                                    ${el.properties.address}
-                                                </button>
-                                            </form>`
+                btn = document.createElement('button')
+                btn.type = 'button'
+                btn.classList = 'searchResult'
+                btn.onclick = () => callFlyToWithId(el.properties.id)
+                btn.innerHTML = `${el.properties.title}<br>${el.properties.address}`
+
+                frm = document.createElement('form')
+                frm.appendChild(btn)
+                resultList.appendChild(frm)
             }
         })
     }

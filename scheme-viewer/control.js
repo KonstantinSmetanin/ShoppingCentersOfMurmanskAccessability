@@ -4,7 +4,7 @@ let x, y, savedX = 0, savedY = 0
 let isPressed = false
 
 const sidebar = document.getElementById('sidebar')
-const actionLayer = document.getElementById('actionLayer')
+const actionLayer = document.getElementById('action-layer')
 
 const onMouseDown = (e) => {
     x = e.offsetX
@@ -63,7 +63,7 @@ function reset(){
 
 //change scheme to display
 
-const schemeSelection = document.getElementById('schemeSelection')
+const schemeSelection = document.getElementById('scheme-selection')
 
 //get id of schemeSet 
 let params = new URLSearchParams(window.location.search)
@@ -84,7 +84,7 @@ let mapButtons = new Map()
 
 schemeSets[id].schemeNumbers.forEach(i => {
     mapButtons.set(i, document.createElement('button'))
-    mapButtons.get(i).classList = 'selectionButton'
+    mapButtons.get(i).classList = 'selection-button btn'
     mapButtons.get(i).innerText = `Этаж ${i}`
     mapButtons.get(i).onclick = () => changeScheme(i)
     schemeSelection.appendChild(mapButtons.get(i))
@@ -96,14 +96,15 @@ let elementLegend, imageLegend, textLegend
 
 schemeSets[id].legendElements.forEach(i => {
     elementLegend = document.createElement('div')
-    elementLegend.classList = 'elementLegend'
+    elementLegend.classList = 'element-legend'
     imageLegend = document.createElement('img')
     imageLegend.src = `../schemes/elements/${i}.png`
-    imageLegend.classList = 'legendIcon'
+    imageLegend.classList = 'legend-icon'
     elementLegend.appendChild(imageLegend)
 
-    textLegend = document.createElement('b')
+    textLegend = document.createElement('span')
     textLegend.innerText = ` - ${legendDescription.get(i)}`
+    textLegend.classList = 'text-legend'
     elementLegend.appendChild(textLegend)
 
     legend.appendChild(elementLegend)

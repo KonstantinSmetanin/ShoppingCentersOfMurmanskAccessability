@@ -4,61 +4,67 @@
     top: 0%;
     height: 100vh;
     width: 20vw;
-    background-color: blueviolet;
+    background-color: #b8a9c9;
     margin: 0px;
     z-index: 2;
 }
-.resetButton{
+.reset-button{
     position: relative;
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px 0px 15px 15px;
     width: 18vw;
 }
-.actionLayer{
+.action-layer{
     position: absolute;
     top: 0%;
     left: 0%;
     height: 100vh;
     width: 80vw;
-    background-color: brown;
+    background-color: #d6d4e0;
     background-size: 80vw;
     background-position: left 0px top 0px;
     background-repeat: no-repeat;
 }
-.schemeSelection{
+.scheme-selection{
     position: relative;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 15px;
     width: 18vw;
-    height: 300px;
-    background-color: coral;
+    height: auto;
+    /* background-color: coral; */
 }
 .legend{
     position: relative;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 15px;
     width: 18vw;
-    height: 300px;
-    background-color: pink;
+    height: auto;
+    /* background-color: #62256999; */
 }
-.legendIcon{
-    width: 25px;
+.legend-icon{
+    width: 30px;
     margin: 5px;
     vertical-align: middle;
 }
-.elementLegend{
-    margin-left: 5px;
-    margin-right: 5px;
+.element-legend{
+    margin: 5px;
 }
-.selectionButton{
+.selection-button{
     position: relative;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 0;
     height: 20px;
     width:100%;
+}
+.btn{
+    color: #d6d4e0;
+    display: block;
+    height: 30px;
+    border: none;
+    background-color: #622569;
+    font-size: 1.3em;
+}
+.btn:hover{
+    color: white;
+}
+.text-legend{
+    color: #622569;
+    size: 1.5em;
+    font-weight: bolder;
 }
