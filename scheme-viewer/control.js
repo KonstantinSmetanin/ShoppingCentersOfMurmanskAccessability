@@ -78,17 +78,29 @@ function changeScheme(schemeID){
     reset()
 }
 
+
 //scheme changing menu
 let selectionButton 
 let mapButtons = new Map()
+
 
 schemeSets[id].schemeNumbers.forEach(i => {
     mapButtons.set(i, document.createElement('button'))
     mapButtons.get(i).classList = 'selection-button btn'
     mapButtons.get(i).innerText = `Этаж ${i}`
-    mapButtons.get(i).onclick = () => changeScheme(i)
+    mapButtons.get(i).onclick = () => changeScheme(i) 
+    mapButtons.get(i).style.backgroundColor
     schemeSelection.appendChild(mapButtons.get(i))
 })
+
+// // func to change buttons color 
+// function changeButtonColor() {
+//     mapButtons.keys().forEach((j) => {
+//         console.log('i got key ' + j )
+//     })
+// }
+
+// changeButtonColor()
 
 //show legend
 const legend = document.getElementById('legend')

@@ -24,7 +24,7 @@ function updateResult(query){
             ){
                 btn = document.createElement('button')
                 btn.type = 'button'
-                btn.classList = 'searchResult'
+                btn.classList = 'searchResult btn'
                 btn.onclick = () => callFlyToWithId(el.properties.id)
                 btn.innerHTML = `${el.properties.title}<br>${el.properties.address}`
 
