@@ -1,3 +1,4 @@
+//dictionary of legend elements description
 const legendDescription = new Map()
 legendDescription.set('elevator', 'лифт')
 legendDescription.set('escalator', 'эскалатор')

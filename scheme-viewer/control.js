@@ -69,9 +69,6 @@ const schemeSelection = document.getElementById('scheme-selection')
 let params = new URLSearchParams(window.location.search)
 let id = params.get('id')
 
-//change scheme initially
-// actionLayer.style.backgroundImage = `url('../schemes/${id}/1.png')`
-
 //func to change displayed scheme 
 function changeScheme(schemeID){
     actionLayer.style.backgroundImage = `url('../schemes/${id}/${schemeID}.png')`
@@ -79,13 +76,12 @@ function changeScheme(schemeID){
     reset()
 }
 
-
-
 //scheme changing menu
+
 let selectionButton 
 let mapButtons = new Map()
 
-
+//adding buttons for every scheme
 schemeSets[id].schemeNumbers.forEach(i => {
     mapButtons.set(i, document.createElement('button'))
     mapButtons.get(i).classList = 'selection-button btn'
@@ -109,9 +105,11 @@ function changeButtonColor(i) {
 changeScheme(1)
 
 //show legend
+
 const legend = document.getElementById('legend')
 let elementLegend, imageLegend, textLegend
 
+//adding elements of legend
 schemeSets[id].legendElements.forEach(i => {
     elementLegend = document.createElement('div')
     elementLegend.classList = 'element-legend'

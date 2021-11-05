@@ -63,5 +63,3 @@ new mapboxgl.Marker(el)                             //creates a mapbox marker
         '<h3>БАЛОВСТВО</h3>'
     ))
     .addTo(map)                                     //displayes result on the map 
-
-console.log(markerDict[0].properties.psudo)

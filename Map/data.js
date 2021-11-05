@@ -1,3 +1,4 @@
+//object of shopping center location and metadata
 const geojson = {
     type: 'FeatureCollection',
     features: [
