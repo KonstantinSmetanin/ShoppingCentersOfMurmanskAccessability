@@ -70,13 +70,15 @@ let params = new URLSearchParams(window.location.search)
 let id = params.get('id')
 
 //change scheme initially
-actionLayer.style.backgroundImage = `url('../schemes/${id}/1.png')`
+// actionLayer.style.backgroundImage = `url('../schemes/${id}/1.png')`
 
 //func to change displayed scheme 
 function changeScheme(schemeID){
     actionLayer.style.backgroundImage = `url('../schemes/${id}/${schemeID}.png')`
+    changeButtonColor(schemeID)
     reset()
 }
+
 
 
 //scheme changing menu
@@ -93,14 +95,18 @@ schemeSets[id].schemeNumbers.forEach(i => {
     schemeSelection.appendChild(mapButtons.get(i))
 })
 
-// // func to change buttons color 
-// function changeButtonColor() {
-//     mapButtons.keys().forEach((j) => {
-//         console.log('i got key ' + j )
-//     })
-// }
+// func to change buttons color 
+function changeButtonColor(i) {
+    for (j of mapButtons.keys()){
+        if (i === j)
+            mapButtons.get(j).style.backgroundColor = '#c83349'
+        else
+            mapButtons.get(j).style.backgroundColor = '#622569'
+    }
+}
 
-// changeButtonColor()
+//change scheme initially
+changeScheme(1)
 
 //show legend
 const legend = document.getElementById('legend')
