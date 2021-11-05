@@ -45,7 +45,7 @@ for (const { geometry, properties } of geojson.features) {
                     .setHTML(
                         `<h3>${properties.title}</h3>
                         <p>${properties.address}</p>
-                        <input type="button" class="btn"value="Схема" onclick="window.location='../scheme-viewer/scheme-viewer.html?id=${properties.id}'"></input>`)
+                        <input type="button" class="btn"value="Схема" onclick="window.location='./scheme-viewer/scheme-viewer.html?id=${properties.id}'"></input>`)
             )
             .addTo(map)
     )
