@@ -50,16 +50,3 @@ for (const { geometry, properties } of geojson.features) {
             .addTo(map)
     )
 }
-
-//test of adding marker to the map 
-//IT WORKS
-const el = document.createElement('div')            //so it will be in it's own <div> 
-el.className = 'marker'                             //so it will be displayed with markers style
-
-new mapboxgl.Marker(el)                             //creates a mapbox marker
-    .setLngLat([33.068424, 68.961794])              //defines coordinates
-    .setPopup(new mapboxgl.Popup({ offset: 25 })    //adds popup for marker { struct with 'offset' parameter }
-    .setHTML(                                       //defines HTML inside it 
-        '<h3>БАЛОВСТВО</h3>'
-    ))
-    .addTo(map)                                     //displayes result on the map 
