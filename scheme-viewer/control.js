@@ -9,16 +9,12 @@ const actionLayer = document.getElementById('actionLayer')
 const onMouseDown = (e) => {
     x = e.offsetX
     y = e.offsetY
-    sidebar.innerHTML = 'pressed'
-    sidebar.innerHTML += `<br>X: ${savedX}<br>Y: ${savedY}`
     isPressed = true
 }
 
 const onMouseMove = (e) => {
     if (isPressed){
         actionLayer.style.backgroundPosition = `left ${savedX + e.offsetX - x}px top ${savedY + e.offsetY - y}px`                
-        sidebar.innerHTML = 'moving'
-        sidebar.innerHTML += `<br>X: ${savedX + e.offsetX - x}<br>Y: ${savedY + e.offsetY - y}`
     }
 }
 
@@ -26,8 +22,6 @@ const onMouseUp = (e) => {
     savedX += e.offsetX - x
     savedY += e.offsetY - y
     actionLayer.style.backgroundPosition = `left ${savedX}px top ${savedY}px`
-    sidebar.innerHTML = 'not' 
-    sidebar.innerHTML += `<br>X: ${savedX}<br>Y: ${savedY}`
     isPressed = false   
 }
 
@@ -84,15 +78,33 @@ function changeScheme(schemeID){
     reset()
 }
 
-for (i of schemeSets[id].schemeNumbers){
-    schemeSelection.innerHTML += `<button onclick="changeScheme(${i})">floor ${i}</button><br>`
-}
+//scheme changing menu
+let selectionButton 
+let mapButtons = new Map()
+
+schemeSets[id].schemeNumbers.forEach(i => {
+    mapButtons.set(i, document.createElement('button'))
+    mapButtons.get(i).classList = 'selectionButton'
+    mapButtons.get(i).innerText = `Этаж ${i}`
+    mapButtons.get(i).onclick = () => changeScheme(i)
+    schemeSelection.appendChild(mapButtons.get(i))
+})
 
 //show legend
 const legend = document.getElementById('legend')
+let elementLegend, imageLegend, textLegend
 
-for (el of schemeSets[id].legendElements){
-    legend.innerHTML += `<image class="legendIcon" src="../schemes/elements/${el}.png"></image>`
-    legend.innerHTML += `- ${legendDescription.get(el)}`
-    legend.innerHTML += '<br>'
-}
+schemeSets[id].legendElements.forEach(i => {
+    elementLegend = document.createElement('div')
+    elementLegend.classList = 'elementLegend'
+    imageLegend = document.createElement('img')
+    imageLegend.src = `../schemes/elements/${i}.png`
+    imageLegend.classList = 'legendIcon'
+    elementLegend.appendChild(imageLegend)
+
+    textLegend = document.createElement('b')
+    textLegend.innerText = ` - ${legendDescription.get(i)}`
+    elementLegend.appendChild(textLegend)
+
+    legend.appendChild(elementLegend)
+})

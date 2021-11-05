@@ -1,9 +1,3 @@
-// const schemeSets = [
-//     [1,2],
-//     null,
-//     [1,2,3,4]
-// ]
-
 const schemeSets = [
     {
         schemeNumbers: [1,2],

@@ -9,9 +9,11 @@
     z-index: 2;
 }
 .resetButton{
-    position: absolute;
-    left: 2%;
-    top: 2%;
+    position: relative;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 18vw;
 }
 .actionLayer{
     position: absolute;
@@ -25,23 +27,38 @@
     background-repeat: no-repeat;
 }
 .schemeSelection{
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    width: 20vw;
-    height: 50vh;
-    background-color: green;
-    z-index: 3;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 18vw;
+    height: 300px;
+    background-color: coral;
 }
 .legend{
-    position: absolute;
-    left: 2%;
-    bottom: 2%;
-    background-color:peru;
-    width: 20vw;
-    height: auto;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 18vw;
+    height: 300px;
+    background-color: pink;
 }
 .legendIcon{
     width: 25px;
     margin: 5px;
+    vertical-align: middle;
+}
+.elementLegend{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.selectionButton{
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 20px;
+    width:100%;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +10,49 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-    
-    <div id="sidebar" class="sidebar">This is sidebar</div>
+
+    <div id="sidebar" class="sidebar">
+        <button class="resetButton" onclick="reset()">Сброс</button>
+        <div class="schemeSelection" id="schemeSelection"></div>
+        <div class="legend" id="legend"></div>
+    </div>
     <div id="actionLayer" class="actionLayer"></div>
-    <button class="resetButton" onclick="reset()">Reset</button>
-    <div class="schemeSelection" id="schemeSelection"></div>
-    <div class="legend" id="legend"></div>
+    <!-- <div class="legend" id="legend"></div> -->
+
+    <!-- goal is to set every info to the sidebar -->
+    <!-- for that i need to deactivate every info thing and add it to the sidebar one by one -->
+    <!-- FIRST: deactivate -->
+
+    <!-- nice. Need to beautify three things:-->
+    <!-- reset button, -->
+    <!-- floor selector, -->
+    <!-- legend -->
+
+    <!-- idea behind it is to make upper side of the sidebar like reset button on the left -->
+    <!-- and floor selector on the right as dropdown meny -->
+    <!-- then legend below it -->
+
+    <!-- SECOND: reset button -->
+
+    <!-- reset button is on it's place -->
+    <!-- now for the selector. Need to make it a dropdown menu first, then put it on it's place -->
+
+    <!-- UPDATE: there's no fast way to make selector a dropdown menu the way I want it -->
+    <!-- so, I'm about to make it just with the bunch of buttons -->
+
+    <!-- THIRD: make selector as bunch of buttons -->
+
+    <!-- Done. Now it's time to add a legend -->
+    <!-- I see it just like a list of images and descriptions -->
+    
+    <!-- FOURTH: make a legend -->
 
     <script src="scheme-sets.js"></script>
     <script src="legend-description.js"></script>
     <script src="control.js"></script>
 
 </body>
+
 </html>
