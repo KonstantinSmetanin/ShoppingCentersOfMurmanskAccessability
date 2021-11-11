@@ -65,6 +65,10 @@
     color: #622569;
     size: 1.5em;
     font-weight: bolder;
+    vertical-align: middle;
+    display: inline-block;
+    width: 13vw;
+    margin-left: 5px;
 }
 .home-button{
     position: absolute;

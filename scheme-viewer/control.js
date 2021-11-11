@@ -113,12 +113,14 @@ let elementLegend, imageLegend, textLegend
 schemeSets[id].legendElements.forEach(i => {
     elementLegend = document.createElement('div')
     elementLegend.classList = 'element-legend'
+
     imageLegend = document.createElement('img')
     imageLegend.src = `../schemes/elements/${i}.png`
     imageLegend.classList = 'legend-icon'
     elementLegend.appendChild(imageLegend)
 
-    textLegend = document.createElement('span')
+    // textLegend = document.createElement('span')
+    textLegend = document.createElement('figcaption')
     textLegend.innerText = ` - ${legendDescription.get(i)}`
     textLegend.classList = 'text-legend'
     elementLegend.appendChild(textLegend)
